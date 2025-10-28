@@ -1,40 +1,47 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
+title: Cloudflare Tunnel Ingress Controller
+description: Publish services through Cloudflare Tunnel using native Kubernetes Ingress resources.
 template: splash # Remove or comment out this line to display the site sidebar on this page.
 hero:
-  tagline: Congrats on setting up a new Starlight project!
-  image:
-    file: ../../assets/houston.webp
+  tagline: Expose Kubernetes services through Cloudflare Tunnel with native Ingress.
+  text: The controller maps standard Kubernetes Ingress objects that use the `cloudflare-tunnel` class into Cloudflare Argo tunnels and DNS records—no extra CRDs required.
   actions:
-    - text: Example Guide
-      link: /guides/example/
+    - text: Quickstart
+      link: /guides/quickstart/
       icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
+    - text: View on GitHub
+      link: https://github.com/strrl/cloudflare-tunnel-ingress-controller
       icon: external
       variant: minimal
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-## Next steps
+## What Is the Controller?
+
+The Cloudflare Tunnel Ingress Controller watches Kubernetes `Ingress` objects and the associated `IngressClass`. When it sees routes assigned to the `cloudflare-tunnel` class, it provisions Cloudflare tunnels, starts `cloudflared` connectors, and publishes DNS records so traffic reaches the target Service securely.
+
+### Key capabilities
+
+- Use existing Kubernetes `Ingress` resources—no custom API types to learn.
+- Automate tunnel creation, DNS record management, and `cloudflared` connector rollout.
+- Provide credentials through the bundled `cloudflare-api` secret or your own secret reference.
+- Observe controller activity via Kubernetes events, logs, and metrics endpoints.
+
+## Where to Start
 
 <CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
+	<Card title="Follow the Quickstart" icon="rocket">
+		Install the Helm chart, supply Cloudflare credentials, and publish your first Ingress-backed route.
 	</Card>
-	<Card title="Change page layout" icon="document">
-		Delete `template: splash` in `src/content/docs/index.mdx` to display a
-		sidebar on this page.
+	<Card title="Review Configuration" icon="setting">
+		Understand ingress class behaviour, secret formats, and Helm values before rolling into production.
 	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
-	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
+	<Card title="Plan Operations" icon="status">
+		Adopt GitOps workflows, monitor connector health, and manage DNS lifecycles safely.
 	</Card>
 </CardGrid>
+
+## Join the community
+
+Issues and pull requests are welcome in the [GitHub repository](https://github.com/strrl/cloudflare-tunnel-ingress-controller). For ideas and questions, start a discussion or open an issue so we can help you get tunnels online safely.
