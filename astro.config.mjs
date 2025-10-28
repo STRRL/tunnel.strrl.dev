@@ -46,6 +46,25 @@ export default defineConfig({
         {
           tag: "script",
           attrs: {
+            src: "https://www.googletagmanager.com/gtag/js?id=G-CHHHFNJ6K5",
+            async: true,
+          },
+        },
+        {
+          tag: "script",
+          attrs: {
+            type: "text/javascript",
+          },
+          content: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-CHHHFNJ6K5');
+          `,
+        },
+        {
+          tag: "script",
+          attrs: {
             type: "text/javascript",
           },
           content: `
