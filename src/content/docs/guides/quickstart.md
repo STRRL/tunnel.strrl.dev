@@ -10,7 +10,7 @@ Use this guide to install the controller with Helm and publish a Kubernetes Serv
 - A Kubernetes cluster running version 1.26 or later with cluster-admin access.
 - `kubectl` and `helm` configured for the cluster.
 - A Cloudflare account with an active zone and Argo Tunnel access enabled.
-- An API token that can manage tunnels and DNS: 
+- An API token that can manage tunnels and DNS:
   - `Account.Cloudflare Tunnel:Edit`
   - `Zone.DNS:Edit`
   - `Zone.Zone:Read`
@@ -85,6 +85,6 @@ kubectl get ingress dashboard -n kubernetes-dashboard -o yaml
 
 ## Next steps
 
-- Review the [configuration reference](/reference/configuration/) for secret formats, ingress class options, and Helm values.
+- Review the reference docs for the [ingress class](/reference/ingress-class/), [credentials](/reference/credentials/), [ingress routes](/reference/ingress-routes/), and [ingress annotations](/reference/ingress-annotations/).
 - Switch the chart to an existing secret if you prefer to manage credentials outside Helm releases.
 - Automate deployment via GitOps and monitor the `cloudflared` connector pods for long-lived tunnels.
