@@ -1,12 +1,30 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
+import starlightBlog from "starlight-blog";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://tunnel.strrl.dev",
   integrations: [
     starlight({
       title: "Cloudflare Tunnel Ingress Controller",
+      customCss: ["./src/styles/custom.css"],
+      plugins: [
+        starlightBlog({
+          title: "Development Blog",
+          prefix: "blog",
+          authors: {
+            strrl: {
+              name: "STRRL",
+              title: "Developer",
+              url: "https://github.com/strrl",
+              picture:
+                "https://avatars.githubusercontent.com/u/20221408?s=400&u=6ba6413e865019ca18f4422e4c53fcb046ef0a8c&v=4",
+            },
+          },
+        }),
+      ],
       social: [
         {
           icon: "github",
