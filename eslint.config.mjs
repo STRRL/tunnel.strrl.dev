@@ -5,7 +5,7 @@ import tseslint from "typescript-eslint";
 
 export default [
   {
-    ignores: ["dist/**", ".astro/**"],
+    ignores: ["dist/**", ".astro/**", "pnpm-lock.yaml"],
   },
   js.configs.recommended,
   ...tseslint.configs.recommended,
