@@ -77,6 +77,24 @@ export default defineConfig({
             })(window, document, "clarity", "script", "tx1nlf05gh");
           `,
         },
+        {
+          tag: "script",
+          attrs: {
+            type: "text/javascript",
+          },
+          content: `
+            (function() {
+              var img = document.createElement('img');
+              img.referrerPolicy = 'no-referrer-when-downgrade';
+              img.src = 'https://static.scarf.sh/a.png?x-pxid=8c03545e-5e36-4b2e-bb3b-d0e45626f71b';
+              img.alt = '';
+              img.style.display = 'none';
+              img.width = 1;
+              img.height = 1;
+              document.body.appendChild(img);
+            })();
+          `,
+        },
       ],
     }),
   ],

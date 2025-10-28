@@ -1,6 +1,6 @@
 ---
 title: I Built a Cloudflare Tunnel Ingress Controller So I Could Access My Homelab's Emby Server from outside
-date: 2024-10-27T00:00:00.000Z
+date: 2025-10-27
 authors:
   - strrl
 tags:
