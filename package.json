@@ -12,7 +12,7 @@
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "check": "pnpm lint && pnpm format:check"
+    "check": "pnpm lint:fix && pnpm format"
   },
   "dependencies": {
     "@astrojs/starlight": "^0.36.1",

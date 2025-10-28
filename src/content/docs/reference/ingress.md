@@ -1,7 +1,13 @@
 ---
-title: Ingress Routes
+title: Ingress
 description: Configure ingress resources and annotations for Cloudflare Tunnel.
 ---
+
+This guide explains how to configure Ingress resources for Cloudflare Tunnel.
+
+For general information about Kubernetes Ingress resources, see the [official Kubernetes Ingress documentation](https://kubernetes.io/docs/concepts/services-networking/ingress/).
+
+For detailed configuration options specific to Cloudflare Tunnel, refer to the [ingress annotations reference](/reference/ingress-annotations/).
 
 Each ingress assigned to the `cloudflare-tunnel` class becomes a Cloudflare route. The controller provisions DNS records and launches `cloudflared` connectors that proxy traffic back to your Service.
 

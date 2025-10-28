@@ -36,4 +36,30 @@ cloudflare:
     apiTokenKey: api_token
 ```
 
+For example, if your API token is `XXXXXXXX`, account ID is `YYYYYY`, and tunnel name is `ZZZZZ`, you would first create the secret:
+
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: cloudflare-external-secret
+  namespace: cloudflare-tunnel-system
+type: Opaque
+stringData:
+  api_token: "XXXXXXXX"
+  account_id: "YYYYYY"
+  tunnel_name: "ZZZZZ"
+```
+
+Then configure the Helm chart to reference it:
+
+```yaml
+cloudflare:
+  secretRef:
+    name: cloudflare-external-secret
+    accountIDKey: account_id
+    tunnelNameKey: tunnel_name
+    apiTokenKey: api_token
+```
+
 The controller only needs read access to these values. Rotating the secret in place automatically refreshes credentials on the next reconciliation loop.
