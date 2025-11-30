@@ -85,6 +85,6 @@ kubectl get ingress dashboard -n kubernetes-dashboard -o yaml
 
 ## Next steps
 
-- Review the reference docs for the [ingress class](/reference/ingress-class/), [credentials](/reference/credentials/), [ingress routes](/reference/ingress-routes/), and [ingress annotations](/reference/ingress-annotations/).
+- Review the reference docs for the [ingress class](/reference/ingress-class/), [credentials](/reference/cloudflare-credentials/), [ingress](/reference/ingress/), and [ingress annotations](/reference/ingress-annotations/).
 - Switch the chart to an existing secret if you prefer to manage credentials outside Helm releases.
 - Automate deployment via GitOps and monitor the `cloudflared` connector pods for long-lived tunnels.
